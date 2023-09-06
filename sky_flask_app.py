@@ -2,16 +2,12 @@ from flask import Flask, jsonify, request
 import psycopg2
 
 app = Flask(__name__)
-
-with open('dbpass', 'r') as file:
-    password = file.read().strip()
-    
 #PostgreSQL database configuration
 db_config = {
     'host': '10.0.1.4',
     'database': 'skydb',
     'user': 'skyuser',
-    'password': password,
+    'pass': 'sky123',
 }
 
 def get_data_from_table():
