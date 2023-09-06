@@ -3,7 +3,7 @@ import psycopg2
 
 app = Flask(__name__)
 
-with open('dbpass', 'r') as file:
+with open('/home/skyuser/TerraformSkyProject/dbpass', 'r') as file:
     password = file.read().strip()
     
 #PostgreSQL database configuration
