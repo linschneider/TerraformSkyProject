@@ -3,11 +3,12 @@ import psycopg2
 
 app = Flask(__name__)
 #PostgreSQL database configuration
- db_config = {
-    'host': '',
+db_config = {
+    'host': '10.0.1.4',
     'database': 'skydb',
     'user': 'skyuser',
- }
+    'pass': 'password',
+}
 
 def get_data_from_table():
     try:
@@ -96,3 +97,4 @@ def delete_data(data_id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
