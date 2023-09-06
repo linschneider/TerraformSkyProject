@@ -2,8 +2,7 @@ from flask import Flask, jsonify, request
 import psycopg2
 
 app = Flask(__name__)
-
-pass = ''
+pass = 'str'
 with open('dbpass', 'r') as file:
     pass = file.read()
     
