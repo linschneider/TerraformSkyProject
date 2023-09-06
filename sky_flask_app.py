@@ -4,9 +4,10 @@ import psycopg2
 app = Flask(__name__)
 #PostgreSQL database configuration
  db_config = {
-    'host': '',
+    'host': '10.0.1.4',
     'database': 'skydb',
     'user': 'skyuser',
+    'pass': pass,
  }
 
 def get_data_from_table():
