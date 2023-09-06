@@ -7,7 +7,7 @@ db_config = {
     'host': '10.0.1.4',
     'database': 'skydb',
     'user': 'skyuser',
-    'pass': 'sky123',
+    'password': 'sky123',
 }
 
 def get_data_from_table():
