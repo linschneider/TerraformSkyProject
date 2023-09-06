@@ -1,10 +1,6 @@
 #!/bin/bash
 
-# Clone the repository
-git clone https://github.com/linschneider/TerraformSkyProject.git
 
-# Navigate to the Flask app directory
-cd TerraformSkyProject
 sudo apt update
 sudo apt install -y python3 python3-pip
 
