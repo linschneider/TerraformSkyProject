@@ -4,14 +4,14 @@ import psycopg2
 app = Flask(__name__)
 
 with open('dbpass', 'r') as file:
-    pass = file.read().strip()
+    password = file.read().strip()
     
 #PostgreSQL database configuration
 db_config = {
     'host': '10.0.1.4',
     'database': 'skydb',
     'user': 'skyuser',
-    'password': pass,
+    'password': password,
 }
 
 def get_data_from_table():
