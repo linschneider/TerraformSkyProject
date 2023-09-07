@@ -181,8 +181,10 @@ resource "null_resource" "remote_execution_sky_web" {
     provisioner "remote-exec" {
     inline = [
       "git clone https://github.com/linschneider/TerraformSkyProject.git",
-      "touch ./TerraformSkyProject/dbpass",
-      "echo $(cat secret.tfvar.tf | grep -o 'default\\s*=\\s*\"[^\\\"]*\"' | sed 's/default\\s*=\\s*\\\"\\(.*\\)\\\"/\\1/') > ./TerraformSkyProject/dbpass" , 
+      "touch dbpass",
+      "echo $(cat secret.tfvar.tf | grep -o 'default\\s*=\\s*\"[^\\\"]*\"' | sed 's/default\\s*=\\s*\\\"\\(.*\\)\\\"/\\1/') > dbpass",
+      "sudo chmod 777 .",
+      "mv dbpass TerraformSkyProject/dbpass",
       "cd TerraformSkyProject",
       "chmod 777 app_script.sh",
       "sudo ./app_script.sh"
@@ -252,12 +254,12 @@ resource "null_resource" "remote_execution_sky_db" {
     provisioner "remote-exec" {
     inline = [
       "git clone https://github.com/linschneider/TerraformSkyProject.git",
-      "touch ./TerraformSkyProject/dbpass",
-      "echo $(cat secret.tfvar.tf | grep -o 'default\\s*=\\s*\"[^\\\"]*\"' | sed 's/default\\s*=\\s*\\\"\\(.*\\)\\\"/\\1/') > ./TerraSkyProject/dbpass",
+      "touch dbpass",
+      "echo $(cat secret.tfvar.tf | grep -o 'default\\s*=\\s*\"[^\\\"]*\"' | sed 's/default\\s*=\\s*\\\"\\(.*\\)\\\"/\\1/') > dbpass",
       "sudo chmod 777 .",
+      "mv dbpass TerraformSkyProject/dbpass",
       "cd TerraformSkyProject",
       "sudo chmod 777 ./postgresql_script.sh",
-
       "sudo ./postgresql_script.sh"
       ]
   }
