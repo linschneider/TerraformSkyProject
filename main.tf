@@ -252,6 +252,7 @@ resource "null_resource" "remote_execution_sky_db" {
     provisioner "remote-exec" {
     inline = [
       "git clone https://github.com/linschneider/TerraformSkyProject.git",
+      "touch ./TerraformSkyProject/dbpass",
       "echo $(cat secret.tfvar.tf | grep -o 'default\\s*=\\s*\"[^\\\"]*\"' | sed 's/default\\s*=\\s*\\\"\\(.*\\)\\\"/\\1/') > ./TerraSkyProject/dbpass",
       "sudo chmod 777 .",
       "cd TerraformSkyProject",
