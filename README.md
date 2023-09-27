@@ -75,6 +75,7 @@ The following Terraform configuration defines the infrastructure components that
 - **Managed Disk for Database VM:** A managed disk named `${azurerm_linux_virtual_machine.vm_db_sky_terraform.name}-disk1` is created and attached to the database VM. It has a size of 4 GB.
 
 This Terraform configuration automates the provisioning of these resources in Azure, allowing you to easily create and manage your infrastructure in a consistent and repeatable manner.
+![Description](terraformp.jpg)
 
 
 ## App Script
